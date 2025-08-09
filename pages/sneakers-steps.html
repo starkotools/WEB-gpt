@@ -6,98 +6,131 @@
 <title>Кроки виготовлення снікерсів — Starko</title>
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
-    .steps-container {
-        display: flex;
-        gap: 20px;
-        align-items: flex-start;
-    }
-    .tools-panel {
-        flex: 0 0 30%;
-        background: #f5f5f5;
-        padding: 15px;
-        border-radius: 5px;
-    }
-    .steps-list {
-        flex: 0 0 70%;
-    }
-    .step-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 15px;
-        margin-bottom: 20px;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 15px;
-    }
-    .step-item img {
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        border-radius: 5px;
-    }
-    .step-desc {
-        flex: 1;
-    }
+  .steps-container{display:flex;gap:20px;align-items:flex-start}
+  .tools-panel{flex:0 0 30%;background:#f5f5f5;padding:16px;border-radius:8px}
+  .tools-panel h2{margin:0 0 8px}
+  .tools-panel .group{margin:12px 0}
+  .tools-panel .group h4{margin:0 0 6px}
+  .tools-panel ul{margin:0;padding-left:18px}
+  .steps-list{flex:1}
+  .step-item{display:flex;gap:16px;align-items:flex-start;padding:12px;border-bottom:1px solid #e6e6e6;text-decoration:none;color:inherit}
+  .step-item:hover{background:#fafafa}
+  .step-thumb{width:150px;height:150px;border-radius:6px;background:#eee;flex:0 0 150px;display:flex;align-items:center;justify-content:center;font:14px/1.2 system-ui;color:#666}
+  .step-desc h3{margin:0 0 6px}
+  .step-desc p{margin:0;color:#555}
 </style>
 </head>
 <body>
 <header class="topbar">
-    <div class="wrap">
-        <a class="brand" href="../index.html" style="color:#fff">Starko</a>
-        <nav class="mainnav">
-            <a href="../index.html">Головна</a>
-            <a href="sneakers-steps.html">Уроки</a>
-            <a href="shop.html">Магазин</a>
-            <a href="about.html">Про нас</a>
-            <a href="contact.html">Контакти</a>
-        </nav>
-    </div>
+  <div class="wrap">
+    <a class="brand" href="../index.html" style="color:#fff">Starko</a>
+    <nav class="mainnav">
+      <a href="../index.html">Головна</a>
+      <a href="sneakers-steps.html">Уроки</a>
+      <a href="shop.html">Магазин</a>
+      <a href="about.html">Про нас</a>
+      <a href="contact.html">Контакти</a>
+    </nav>
+  </div>
 </header>
 
 <section class="wrap steps-container">
-    <!-- Ліва панель з інструментами -->
-    <aside class="tools-panel" id="toolsPanel">
-        <h2>Інструменти та матеріали</h2>
-        <ul id="toolsList">
-            <li>Виберіть крок, щоб побачити інструменти</li>
-        </ul>
-    </aside>
+  <!-- ЛІВА ПАНЕЛЬ -->
+  <aside class="tools-panel">
+    <h2>Інструменти та матеріали</h2>
 
-    <!-- Права панель зі списком кроків -->
-    <div class="steps-list">
-        <div class="step-item" data-tools='["Ніж","Лекало","Лінійка","Маркер","Розкрійний килимок"]'>
-            <img src="https://via.placeholder.com/150" alt="Крок 1">
-            <div class="step-desc">
-                <h3>Крок 1: Підготовка лекал</h3>
-                <p>Опис етапу — створення лекал для деталей верху снікерсів.</p>
-            </div>
-        </div>
-
-        <div class="step-item" data-tools='["Швейна машина","Нитки","Голки","Затискачі","Наперсток"]'>
-            <img src="https://via.placeholder.com/150" alt="Крок 2">
-            <div class="step-desc">
-                <h3>Крок 2: Зшивання деталей</h3>
-                <p>Опис етапу — зшивання вирізаних деталей верху взуття.</p>
-            </div>
-        </div>
-
-        <div class="step-item" data-tools='["Молоток","Колодка","Клей","Щітка","Ролик для клею"]'>
-            <img src="https://via.placeholder.com/150" alt="Крок 3">
-            <div class="step-desc">
-                <h3>Крок 3: Монтаж верху на колодку</h3>
-                <p>Опис етапу — натягування та фіксація верху на колодці.</p>
-            </div>
-        </div>
+    <div class="group">
+      <h4>Інструменти</h4>
+      <ul id="listTools"><li>Наведіть на крок → побачите список</li></ul>
     </div>
+
+    <div class="group">
+      <h4>Лекала</h4>
+      <ul id="listPatterns"></ul>
+    </div>
+
+    <div class="group">
+      <h4>Матеріали</h4>
+      <ul id="listMaterials"></ul>
+    </div>
+  </aside>
+
+  <!-- ПРАВА КОЛОНКА — КРОКИ (1 у рядку) -->
+  <div class="steps-list" id="stepsList">
+    <!-- КРОК 1 -->
+    <a class="step-item"
+       href="sneakers/step-1.html"
+       data-tools='[["Ніж-косяк","#"],["Лінійка лекальна","#"],["Маркер","#"],["Килимок для різання","#"]]'
+       data-patterns='[["Базові лекала 42","#"]]'
+       data-materials='[["Картон лекальний","#"]]'
+       >
+      <div class="step-thumb">Крок 1</div>
+      <div class="step-desc">
+        <h3>Крок 1: Підготовка лекал</h3>
+        <p>Створення та підготовка лекал для деталей верху снікерсів.</p>
+      </div>
+    </a>
+
+    <!-- КРОК 2 -->
+    <a class="step-item"
+       href="sneakers/step-2.html"
+       data-tools='[["Роликовий ніж","#"],["Зажими","#"],["Ножиці","#"]]'
+       data-patterns='[["Лекала деталей верху","#"]]'
+       data-materials='[["Шкіра/Canvas","#"],["Підкладка","#"]]'
+       >
+      <div class="step-thumb">Крок 2</div>
+      <div class="step-desc">
+        <h3>Крок 2: Зшивання деталей</h3>
+        <p>Зшивання вирізаних деталей верху взуття.</p>
+      </div>
+    </a>
+
+    <!-- КРОК 3 -->
+    <a class="step-item"
+       href="sneakers/step-3.html"
+       data-tools='[["Швейна машина","#"],["Кромкоріз","#"],["Щітка для клею","#"]]'
+       data-patterns='[["Лекала підкладки","#"]]'
+       data-materials='[["Нитки 20/3","#"],["Клей латексний","#"]]'
+       >
+      <div class="step-thumb">Крок 3</div>
+      <div class="step-desc">
+        <h3>Крок 3: Монтаж верху на колодку</h3>
+        <p>Натягування та фіксація верху на колодці.</p>
+      </div>
+    </a>
+
+    <!-- додаси далі кроки 4–6 за аналогією -->
+  </div>
 </section>
 
 <script>
-document.querySelectorAll('.step-item').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        const tools = JSON.parse(item.getAttribute('data-tools'));
-        const list = document.getElementById('toolsList');
-        list.innerHTML = tools.map(tool => `<li>${tool}</li>`).join('');
+  // утиліта для рендеру списків із пар [назва, url]
+  function renderList(ul, pairs){
+    ul.innerHTML = (pairs || []).map(([label, href]) =>
+      `<li><a href="${href || '#'}">${label}</a></li>`
+    ).join('');
+  }
+
+  const toolsUL = document.getElementById('listTools');
+  const patternsUL = document.getElementById('listPatterns');
+  const materialsUL = document.getElementById('listMaterials');
+
+  // початковий стан — з першого кроку (якщо потрібно)
+  const first = document.querySelector('.step-item');
+  if (first){
+    renderList(toolsUL, JSON.parse(first.dataset.tools || '[]'));
+    renderList(patternsUL, JSON.parse(first.dataset.patterns || '[]'));
+    renderList(materialsUL, JSON.parse(first.dataset.materials || '[]'));
+  }
+
+  // оновлюємо ЛИШЕ при наведенні (hover), як ти й хотів
+  document.querySelectorAll('.step-item').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      renderList(toolsUL, JSON.parse(el.dataset.tools || '[]'));
+      renderList(patternsUL, JSON.parse(el.dataset.patterns || '[]'));
+      renderList(materialsUL, JSON.parse(el.dataset.materials || '[]'));
     });
-});
+  });
 </script>
 </body>
 </html>
