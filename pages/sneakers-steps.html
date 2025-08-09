@@ -1,3 +1,103 @@
-<!doctype html><html lang='uk'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Снікерси — Кроки</title><link rel='stylesheet' href='../assets/css/style.css'><script defer src='../assets/js/app.js'></script></head><body><header class='topbar'><div class='wrap'><a class='brand' href='../index.html' style='color:#fff'>Starko</a><nav class='mainnav'><a href='../index.html'>Головна</a><a href='sneakers-steps.html'>Уроки</a><a href='shop.html'>Магазин</a>    <a href="about.html">Про нас</a>
-    <a href="contact.html">Контакти</a>
-</nav></div></header><section class='wrap'><h1>Снікерси — кроки</h1></section><div class='wrap' style='display:grid;grid-template-columns:70% 30%;gap:20px;'><main class='panel'><div id='stepsGrid' class='steps-grid'></div></main><aside class='sidebar'><h3>Інструменти</h3><div id='sideTools'></div><h3>Лекала</h3><div id='sidePatterns'></div><h3>Матеріали</h3><div id='sideMaterials'></div></aside></div></body></html>
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Кроки виготовлення снікерсів — Starko</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+    .steps-container {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    .tools-panel {
+        flex: 0 0 30%;
+        background: #f5f5f5;
+        padding: 15px;
+        border-radius: 5px;
+    }
+    .steps-list {
+        flex: 0 0 70%;
+    }
+    .step-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 15px;
+    }
+    .step-item img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+    .step-desc {
+        flex: 1;
+    }
+</style>
+</head>
+<body>
+<header class="topbar">
+    <div class="wrap">
+        <a class="brand" href="../index.html" style="color:#fff">Starko</a>
+        <nav class="mainnav">
+            <a href="../index.html">Головна</a>
+            <a href="sneakers-steps.html">Уроки</a>
+            <a href="shop.html">Магазин</a>
+            <a href="about.html">Про нас</a>
+            <a href="contact.html">Контакти</a>
+        </nav>
+    </div>
+</header>
+
+<section class="wrap steps-container">
+    <!-- Ліва панель з інструментами -->
+    <aside class="tools-panel" id="toolsPanel">
+        <h2>Інструменти та матеріали</h2>
+        <ul id="toolsList">
+            <li>Виберіть крок, щоб побачити інструменти</li>
+        </ul>
+    </aside>
+
+    <!-- Права панель зі списком кроків -->
+    <div class="steps-list">
+        <div class="step-item" data-tools='["Ніж","Лекало","Лінійка","Маркер","Розкрійний килимок"]'>
+            <img src="https://via.placeholder.com/150" alt="Крок 1">
+            <div class="step-desc">
+                <h3>Крок 1: Підготовка лекал</h3>
+                <p>Опис етапу — створення лекал для деталей верху снікерсів.</p>
+            </div>
+        </div>
+
+        <div class="step-item" data-tools='["Швейна машина","Нитки","Голки","Затискачі","Наперсток"]'>
+            <img src="https://via.placeholder.com/150" alt="Крок 2">
+            <div class="step-desc">
+                <h3>Крок 2: Зшивання деталей</h3>
+                <p>Опис етапу — зшивання вирізаних деталей верху взуття.</p>
+            </div>
+        </div>
+
+        <div class="step-item" data-tools='["Молоток","Колодка","Клей","Щітка","Ролик для клею"]'>
+            <img src="https://via.placeholder.com/150" alt="Крок 3">
+            <div class="step-desc">
+                <h3>Крок 3: Монтаж верху на колодку</h3>
+                <p>Опис етапу — натягування та фіксація верху на колодці.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.querySelectorAll('.step-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        const tools = JSON.parse(item.getAttribute('data-tools'));
+        const list = document.getElementById('toolsList');
+        list.innerHTML = tools.map(tool => `<li>${tool}</li>`).join('');
+    });
+});
+</script>
+</body>
+</html>
