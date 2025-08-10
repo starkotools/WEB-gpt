@@ -5,20 +5,24 @@
 <link rel="stylesheet" href="../assets/css/theme-easyshop.css?v=1">
 <link rel="stylesheet" href="assets/css/easyshop-lite.css">
 </head><body>
-<header class="topbar"><div class="wrap"><a class="brand" href="index.html" style="color:#fff">Starko</a><div class="burger"><img src="assets/icons/burger.svg" alt="menu"></div><nav class="mainnav"><a href="index.html">Головна</a><a href="pages/sneakers-steps.html">Уроки</a><a href="pages/shop.html">Магазин</a><a href="pages/about.html">Про нас</a><a href="pages/contact.html">Контакти</a></nav></div></header>
-
-<!-- slim topbar -->
-<div class="topbar-slim">
+<div class="navbar">
   <div class="wrap">
-    <div>✂️ Handcrafted tools for shoemaking</div>
-    <div style="display:flex;gap:14px">
-      <a href="about.html">Про нас</a>
-      <a href="contact.html">Контакти</a>
-    </div>
+    <a class="brand" href="../index.html">Starko</a>
+    <button class="burger" aria-label="Menu"><img src="../assets/icons/burger.svg" alt=""></button>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="../index.html">Головна</a></li>
+        <li class="has-dropdown">
+          <a href="sneakers-steps.html">Уроки</a>
+          <ul class="dropdown">
+            <li><a href="sneakers-steps.html">Снікерси</a></li>
+            <li><a href="shoes-steps.html">Туфлі</a></li>
+          </ul>
+        </li>
+        <li><a href="shop.html">Магазин</a></li>
+        <li><a href="about.html">Про нас</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+      </ul>
+    </nav>
   </div>
 </div>
-<!-- main header -->
-
-<section class="wrap"><h1>Туфлі — кроки</h1><p>Сторінка в розробці.</p></section>
-<script src="assets/js/easyshop-lite.js"></script>
-</body></html>

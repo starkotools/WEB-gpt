@@ -1,49 +1,39 @@
-body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  background: #fff;
-  color: #333;
+:root{
+  --bg:#ffffff;
+  --hdr-bg:#ffffff;      /* <- світлий хедер */
+  --hdr-text:#444;       /* колір пунктів меню */
+  --hdr-text-hover:#6a5acd; /* підсвіт при наведенні (м'який фіолетовий) */
+  --line:#e5e7eb;
+  --radius:12px;
+  --shadow:0 6px 18px rgba(0,0,0,.06);
 }
-.topbar {
-  background: #222;
-  padding: 10px 0;
+html,body{margin:0}
+body{background:var(--bg);color:#222;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+
+/* NAVBAR */
+.navbar{background:var(--hdr-bg);border-bottom:1px solid var(--line)}
+.navbar .wrap{display:flex;align-items:center;gap:18px;min-height:64px}
+.navbar .brand{font-weight:800;color:#111;text-decoration:none;font-size:22px}
+.navbar nav{margin-left:auto}
+.navbar ul{margin:0;padding:0;list-style:none;display:flex;gap:24px}
+.navbar a{color:var(--hdr-text);text-decoration:none}
+.navbar a:hover{color:var(--hdr-text-hover)}
+.navbar .burger{display:none;background:#f6f6f6;border:1px solid var(--line);padding:8px 10px;border-radius:8px;cursor:pointer}
+
+@media (max-width: 900px){
+  .navbar nav{display:none;position:absolute;left:0;right:0;top:64px;background:var(--hdr-bg);border-bottom:1px solid var(--line)}
+  .navbar nav.open{display:block}
+  .navbar ul{flex-direction:column;gap:0}
+  .navbar li{border-top:1px solid #f0f0f0}
+  .navbar .burger{display:inline-flex;margin-left:auto}
 }
-.topbar .wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
-}
-.topbar a {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 15px;
-}
-.topbar a:hover {
-  color: #ff6600;
-}
-nav.mainnav {
-  display: flex;
-  gap: 15px;
-}
-.burger {
-  display: none;
-  cursor: pointer;
-}
-@media (max-width: 768px) {
-  nav.mainnav {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    background: #222;
-    padding: 10px;
-  }
-  nav.mainnav.open {
-    display: flex;
-  }
-  .burger {
-    display: block;
-  }
+
+/* DROPDOWNS */
+.navbar li{position:relative}
+.navbar li .dropdown{display:none;position:absolute;top:100%;left:0;min-width:220px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:8px 0;z-index:20}
+.navbar li:hover>.dropdown{display:block}
+@media (max-width:900px){
+  .navbar li .dropdown{position:static;display:none;border:0;box-shadow:none}
+  .navbar li.open>.dropdown{display:block}
 }
