@@ -1,0 +1,60 @@
+
+/* === theme-easyshop.css (bridge) ===
+ * Підключай ПІСЛЯ assets/css/style.css
+ * Дає "easyshop-look" без Joomla/Gantry.
+ */
+
+:root{
+  --bg:#f7f7f9;
+  --panel:#ffffff;
+  --text:#222;
+  --muted:#6b7280;
+  --accent:#0a7cff;
+  --accent-2:#111827;
+  --line:#e5e7eb;
+  --radius:12px;
+  --shadow:0 6px 18px rgba(0,0,0,.06);
+}
+
+body{background:var(--bg);color:var(--text);font-family: EasyShopUI, system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+a{color:var(--accent)}
+
+/* Slim topbar */
+.topbar-slim{background:var(--accent-2);color:#fff;font-size:12px}
+.topbar-slim .wrap{min-height:34px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.topbar-slim a{color:#fff;opacity:.9}
+.topbar-slim a:hover{opacity:1}
+
+/* Main header */
+.header-main{background:#fff;border-bottom:1px solid var(--line)}
+.header-main .wrap{min-height:72px;display:flex;align-items:center;gap:16px}
+.brand{font-weight:800;font-size:20px;color:#111;text-decoration:none}
+.header-search{flex:1;display:flex;gap:8px}
+.header-search input{flex:1;padding:10px 12px;border:1px solid var(--line);border-radius:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:8px;background:var(--accent);color:#fff;border:0;cursor:pointer}
+.btn:hover{filter:brightness(0.96)}
+.icon-btn{padding:10px 12px;background:#f3f4f6;color:#111;border:1px solid var(--line);border-radius:8px;text-decoration:none}
+
+/* Main nav */
+.mainnav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+.mainnav a{color:#111}
+.mainnav a:hover{color:var(--accent)}
+
+/* Panels/cards */
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.panel .hd{padding:14px 16px;border-bottom:1px solid var(--line);font-weight:700}
+.panel .bd{padding:14px 16px}
+
+/* Steps list look */
+.step-item{display:flex;gap:16px;align-items:flex-start;padding:12px 14px;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;border-radius:10px}
+.step-item:hover{background:#fafafa;box-shadow:0 4px 12px rgba(0,0,0,.04)}
+.step-thumb{width:150px;height:150px;border-radius:10px;background:#eef2ff;display:flex;align-items:center;justify-content:center;color:#4f46e5;font-weight:700}
+
+/* Breadcrumbs */
+.breadcrumbs{font-size:13px;color:var(--muted);margin:8px 0 0}
+.breadcrumbs a{color:var(--muted)}
+.breadcrumbs a:hover{color:var(--accent);text-decoration:none}
+
+/* Layout on steps page */
+.layout-steps{display:grid;grid-template-columns: 320px 1fr;gap:22px}
+@media (max-width: 960px){ .layout-steps{grid-template-columns:1fr} .step-item{flex-direction:column} .step-thumb{width:100%;height:auto;aspect-ratio:1/1} }
